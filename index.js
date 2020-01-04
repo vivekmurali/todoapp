@@ -21,7 +21,7 @@ mongoose.connect(process.env.DB_CONNECT, {
     useUnifiedTopology: true
 }, () => {
     console.log('Connected to DB!');
-    app.listen(process.env.PORT || 3000 , () => {
+    app.listen(process.env.PORT, () => {
         console.log("Server is up and running!");
     });
 });
