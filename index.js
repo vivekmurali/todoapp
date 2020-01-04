@@ -21,7 +21,7 @@ mongoose.connect(process.env.DB_CONNECT, {
     useUnifiedTopology: true
 }, () => {
     console.log('Connected to DB!');
-    app.listen(3000, () => {
+    app.listen(process.env.port || 3000 , () => {
         console.log("Server is up and running!");
     });
 });
@@ -58,7 +58,7 @@ app.route("/remove/:id")
         TodoTask.findByIdAndRemove(id, err => {
             if (err){ return res.send(500, err);}
             res.redirect("/");
-            console.log('ddelete');
+            
         });
     });
 
